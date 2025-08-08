@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="pt-BR"> <!-- Página em português brasileiro -->
+<head> <!-- Configurações da página -->
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <title>To-do List</title> <!-- Título da página -->
+    <link rel="stylesheet" href="style.css"> <!-- Arquivo de estilos -->
+</head>
+<body> <!-- Conteúdo da página -->
+    <div class="container"> <!-- Container principal -->
+        <header> <!-- Cabeçalho -->
+            <h1>📝 To-do</h1> <!-- Título principal -->
+        </header>
+        
+        <div class="todo-form"> <!-- Formulário para adicionar tarefas -->
+            <input type="text" id="todoInput" placeholder="Nova tarefa..." maxlength="100"> <!-- Campo de entrada -->
+            <button id="addBtn" class="btn btn-primary">+</button> <!-- Botão adicionar -->
+        </div>
+
+        <ul id="todoList" class="todo-list"> <!-- Lista de tarefas -->
+            <!-- Tarefas serão inseridas aqui via JavaScript -->
+        </ul>
+
+        <div class="todo-actions"> <!-- Ações gerais -->
+            <button id="clearAll" class="btn btn-danger">Limpar</button> <!-- Botão limpar tudo -->
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Arquivo JavaScript -->
+</body>
+</html>

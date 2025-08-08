@@ -1,0 +1,252 @@
+* { /* Reset geral */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { /* Estilo da página */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container { /* Container principal */
+    max-width: 450px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+    overflow: hidden;
+}
+
+header { /* Cabeçalho */
+    background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 { /* Título */
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.todo-form { /* Formulário */
+    padding: 20px;
+    display: flex;
+    gap: 12px;
+    background: #F8FAFC;
+}
+
+#todoInput { /* Campo de entrada */
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+#todoInput:focus { /* Campo focado */
+    outline: none;
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.btn { /* Botões base */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary { /* Botão principal */
+    background: #8B5CF6;
+    color: white;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover { /* Hover do botão principal */
+    background: #A855F7;
+    transform: scale(1.05);
+}
+
+.btn-danger { /* Botão de perigo */
+    background: #EF4444;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.btn-danger:hover { /* Hover do botão de perigo */
+    background: #DC2626;
+}
+
+.todo-list { /* Lista de tarefas */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.todo-item { /* Item da lista */
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #F1F5F9;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+.todo-item:hover { /* Hover do item */
+    background-color: #F8FAFC;
+}
+
+.todo-item.completed { /* Item concluído */
+    opacity: 0.6;
+}
+
+.todo-item.completed .todo-text { /* Texto concluído */
+    text-decoration: line-through;
+    color: #94A3B8;
+}
+
+.todo-checkbox { /* Checkbox */
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: #8B5CF6;
+    border-radius: 4px;
+}
+
+.todo-text { /* Texto da tarefa */
+    flex: 1;
+    font-size: 16px;
+    color: #1E293B;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.todo-actions-item { /* Ações do item */
+    display: flex;
+    gap: 8px;
+}
+
+.todo-actions-item button { /* Botões de ação */
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-btn { /* Botão editar */
+    background: #8B5CF6;
+    color: white;
+}
+
+.edit-btn:hover { /* Hover do botão editar */
+    background: #A855F7;
+    transform: scale(1.1);
+}
+
+.delete-btn { /* Botão excluir */
+    background: #FEE2E2;
+    color: #EF4444;
+}
+
+.delete-btn:hover { /* Hover do botão excluir */
+    background: #FECACA;
+    transform: scale(1.1);
+}
+
+.todo-actions { /* Ações gerais */
+    padding: 16px 20px;
+    text-align: center;
+    background: #F8FAFC;
+    border-top: 1px solid #F1F5F9;
+}
+
+.empty-state { /* Estado vazio */
+    text-align: center;
+    padding: 50px 20px;
+    color: #94A3B8;
+}
+
+.empty-state h3 { /* Título do estado vazio */
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    color: #64748B;
+}
+
+.empty-state p { /* Texto do estado vazio */
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+
+@keyframes slideIn { /* Animação de entrada */
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar personalizada */
+.todo-list::-webkit-scrollbar { /* Barra de rolagem */
+    width: 4px;
+}
+
+.todo-list::-webkit-scrollbar-track { /* Trilho */
+    background: #F1F5F9;
+}
+
+.todo-list::-webkit-scrollbar-thumb { /* Polegar */
+    background: #CBD5E1;
+    border-radius: 2px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover { /* Hover do polegar */
+    background: #94A3B8;
+}
+
+@media (max-width: 768px) { /* Responsividade */
+    .container {
+        margin: 10px;
+        border-radius: 12px;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .todo-form {
+        padding: 16px;
+    }
+    
+    .todo-item {
+        padding: 12px 16px;
+    }
+    
+    .todo-actions {
+        padding: 12px 16px;
+    }
+}
